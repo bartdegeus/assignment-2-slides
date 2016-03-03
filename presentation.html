@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Anne van de Vorst and Bart de Geus">
+  <title>Modelling assignment: Education Policy</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Modelling assignment: Education Policy</h1>
+  <h2 class="author">Anne van de Vorst and Bart de Geus</h2>
+  <h3 class="date">Seminar Development &amp; Growth</h3>
+</section>
+<section id="TOC">
+<ul>
+<li class="fragment"><a href="#/introduction">Introduction</a></li>
+<li class="fragment"><a href="#/model">Model</a></li>
+<li class="fragment"><a href="#/numerical-example">Numerical example</a></li>
+<li class="fragment"><a href="#/references">References</a></li>
+<li class="fragment"><a href="#/complete-assignment">Complete assignment</a></li>
+</ul>
+</section>
+
+<section><section id="introduction" class="titleslide slide level1"><h1>Introduction</h1></section><section id="motivation" class="slide level2">
+<h1>Motivation</h1>
+<p>In this modeling assignment we will introduce a subsidy to education in the model used in section 13.3.2 of Aghion and Howitt (2009).</p>
+</section><section id="overview-i" class="slide level2">
+<h1>Overview I</h1>
+<ul>
+<li class="fragment">Aghion and Howitt describe a model that was inspired by Acemoglu (1997) and Redding (1996).</li>
+<li class="fragment">The model looks at the composition of education spending and the way it interacts with the level of technological development in a country.</li>
+</ul>
+</section><section id="overview-ii" class="slide level2">
+<h1>Overview II</h1>
+<ul>
+<li class="fragment">Individuals make a decision regarding the amount of investment in education in period 1.</li>
+<li class="fragment">At the same time, entrepreneurs decide how much they would like to invest in innovation.</li>
+<li class="fragment">These decisions depend on the expected level of productivity growth and the expected level of human capital respectively.</li>
+<li class="fragment">Thus, the decisions depend on the decision of the other party and as a result of this interaction; there are multiple growth paths; a low-growth equilibrium and a high-growth equilibrium.</li>
+<li class="fragment">Since it is hard to leave the low growth equilibrium this equilibrium is often called a low-development trap.</li>
+</ul>
+</section><section id="overview-iii" class="slide level2">
+<h1>Overview III</h1>
+<p>We will introduce subsidies on education and see what the result of this subsidy is on the equilibriums and whether this might be a solution for the low-development trap.</p>
+<p>First, we will give an overview of the model in section 13.3.2.</p>
+</section></section>
+<section><section id="model" class="titleslide slide level1"><h1>Model</h1></section><section id="individuals-utility" class="slide level2">
+<h1>Individuals: utility</h1>
+<p>Individuals: * live for two periods and are born with a level of human capital that is equal to one. * maximize their utility * discout future consumption</p>
+<p><span class="math display">\[
+  \underset{\nu}{max}\{u\}=\underset{\nu}{max}\{c_1+\rho c_2\}
+\]</span></p>
+</section><section class="slide level2">
+
+<p>The consumption functions of the individuals are the earnings of the young in every period. These function are given by the following formulas:</p>
+<p><span class="math display">\[
+  c_{young,t}=(1-\nu_t)A_t
+\]</span> <span class="math display">\[
+  c_{old,t+1}=\beta A_{t+1}h_{old,t+1}
+\]</span></p>
+</section><section id="individuals-human-capital" class="slide level2">
+<h1>Individuals: human capital</h1>
+<p>The more they will invest in education, the higher the increase in human capital is:</p>
+\begin{equation*}
+  h_{2,t}=1+\gamma\nu^{\theta}
+\end{equation*}\begin{equation}
+  h_{2,t}=1+\gamma\left(\left[\beta\rho\theta\gamma\left(\mu\lambda+1-\mu\right)\right]^{\frac{1}{1-\theta}}\right)^{\theta}
+\end{equation}
+</section><section class="slide level2">
+
+<p>Inserting human capital in the consumption function and inserting the consumption functions in the utility function; maximize the utility function with respect to $; rewriting this first order condition gives:</p>
+\begin{equation}
+  \nu^{*}=\left[
+    \frac{1}{\rho\beta
+      \left[\mu\lambda+1-\mu\right]
+    \theta\gamma}
+  \right]^{\frac{1}{1-\theta}}
+\end{equation}
+</section><section id="graphical" class="slide level2">
+<h1>Graphical</h1>
+<figure>
+<img src="figure1.png" />
+</figure>
+<p>Figure 1 shows the correlation between expected productivity growth and the level of human capital.</p>
+</section></section>
+<section><section id="numerical-example" class="titleslide slide level1"><h1>Numerical example</h1></section><section id="benchmark" class="slide level2">
+<h1>Benchmark</h1>
+<p>We have given our parameter the values in Table 1 to construct Figure 1.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Values</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{3}\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: center;">0 or 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\gamma\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda\)</span></td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\rho\)</span></td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section><section id="parameter-rationale" class="slide level2">
+<h1>Parameter rationale</h1>
+<ul>
+<li class="fragment">According to Mankiw et al. (1992) the return to human capital is two-thirds, therefore we have set <span class="math inline">\(\beta=\frac{2}{3}\)</span>;</li>
+<li class="fragment">We believe individuals do not discount their future consumption that much and therefore we have set <span class="math inline">\(\rho=0.8\)</span>;</li>
+<li class="fragment">We have normalized this level to 1 for simplicity;</li>
+<li class="fragment"><span class="math inline">\(\theta\)</span> was chosen to be smaller than 0.5 to ensure diminishing returns to human capital;</li>
+<li class="fragment">Other parameters (like $&amp;) were chosen to ensure the model shows multiple growth paths</li>
+</ul>
+</section><section id="equilibrium-with-subsidy" class="slide level2">
+<h1>Equilibrium with subsidy</h1>
+<figure>
+<img src="figure4.png" />
+</figure>
+<p>Figure 4: Level of human capital on expected productivity growth, effect of a subsidy</p>
+</section></section>
+<section><section id="references" class="titleslide slide level1"><h1>References</h1></section><section id="references-1" class="slide level2">
+<h1>References</h1>
+<ul>
+<li class="fragment">Acemoglu, Daron. 1997. ''Training and Innovation in an Imperfect Labour Market.'' <em>The Review of Economic Studies</em> 64 (3): 445-64. doi:10.2307/2971723.</li>
+<li class="fragment">Aghion, Philippe, and Peter W. Howitt. 2009. <em>The Economics of Growth</em> Cambridge, MA: The MIT Press.</li>
+<li class="fragment">Mankiw, N. Gregory, David Romer, and David N. Weil. 1992.''A Contribution to the Empirics of Economic Growth.'' <em>The Quarterly Journal of Economics</em> 107 (2): 407-37. doi:10.2307/2118477.</li>
+<li class="fragment">Redding, Stephen. 1996. ''The Low-Skill, Low-Quality Trap: Strategic Complementaries between Human Capital and R&amp;D.'' <em>The Economic Journal</em> 106 (435): 458-70. doi:10.2307/2235260.</li>
+</ul>
+</section></section>
+<section><section id="complete-assignment" class="titleslide slide level1"><h1>Complete assignment</h1></section><section id="the-complete-assignment" class="slide level2">
+<h1>The complete assignment</h1>
+<p>Can be found on <a href="http://bartdegeus.github.io/assignment-2-html/assignment-2.html">Github</a></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
