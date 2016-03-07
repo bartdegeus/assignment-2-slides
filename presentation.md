@@ -1,7 +1,6 @@
 % Modelling assignment: Education Policy
-% Anne van de Vorst and Bart de Geus
 % Seminar Development & Growth
-
+% Anne van de Vorst & Bart de Geus
 
 Introduction
 ============
@@ -116,7 +115,7 @@ Parameter rationale
 * We believe individuals do not discount their future consumption that much and therefore we have set $\rho=0.8$;
 * We have normalized this level to 1 for simplicity;
 * $\theta$ was chosen to be smaller than 0.5 to ensure diminishing returns to human capital;
-* Other parameters \(like $\alpha&\) were chosen to ensure the model shows multiple growth paths
+* Other parameters \(like $\alpha$\) were chosen to ensure the model shows multiple growth paths
 
 Equilibrium with subsidy
 -----------------------
